@@ -101,3 +101,16 @@ class CountryState(models.Model):
     _sql_constraints = [
         ('name_code_uniq', 'unique(country_id, code)', 'The code of the state must be unique by country !')
     ]
+
+    @api.model
+    def create(self, vals):
+        # check if country_state exists: if true, do not create and return
+        # found state
+        if vals.get('code') and vals.get('country_id'):
+            existing_id = self.search([
+                ('code', '=', vals.get('code')),
+                ('country_id', '=', vals.get('country_id')),
+            ])
+            if existing_id:
+                return existing_id
+        return super(CountryState, self).create(vals)
