@@ -128,4 +128,14 @@ class CountryState(models.Model):
         records = firsts_records + self.search(search_domain + args, limit=limit)
         return [(record.id, record.display_name) for record in records]
 
-
+    def create(self, vals):
+        # check if country_state exists: if true, do not create and return
+        # found state
+        if vals.get('code') and vals.get('country_id'):
+            existing_id = self.search([
+                ('code', '=', vals.get('code')),
+                ('country_id', '=', vals.get('country_id')),
+            ])
+            if existing_id:
+                return existing_id
+        return super(CountryState, self).create(vals)
