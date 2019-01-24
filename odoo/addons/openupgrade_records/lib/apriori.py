@@ -37,7 +37,9 @@ renamed_modules = {
     # OCA/stock-logistics-workflow:
     'product_customer_code_picking':
         'product_supplierinfo_for_customer_picking',
+    # efatto
     'account_invoice_proforma': 'account_invoice_pro_forma_sequence',
+    'web_gantt': 'web_gantt8',
 }
 
 merged_modules = [
