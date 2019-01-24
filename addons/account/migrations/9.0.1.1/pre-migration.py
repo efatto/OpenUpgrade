@@ -386,6 +386,20 @@ def fast_create(env, settings):
 def migrate(env, version):
     cr = env.cr
     # 9.0 introduces a constraint enforcing this
+    cr.execute('''
+        UPDATE account_account 
+        SET type = 'receivable',
+        user_type = '2' WHERE code = '14';
+    ''')
+    cr.execute('''
+        UPDATE account_account 
+        SET type = 'payable',
+        user_type = '3' WHERE code = '40';
+    ''')
+    cr.execute('''
+        delete from ir_act_window_view where act_window_id = 256
+        and view_mode in ('tree', 'form');
+    ''')
     cr.execute(
         "update account_account set reconcile=True "
         "where type in ('receivable', 'payable')"
