@@ -40,6 +40,7 @@ renamed_modules = {
     # efatto
     'account_invoice_proforma': 'account_invoice_pro_forma_sequence',
     'web_gantt': 'web_gantt8',
+    'stock_ddt_data': 'l10n_it_ddt_data',
 }
 
 merged_modules = [
