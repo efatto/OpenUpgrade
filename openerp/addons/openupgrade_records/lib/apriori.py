@@ -69,7 +69,7 @@ renamed_modules = {
     # efatto
     'account_balance_line_view': 'account_balance_line_progressive',
     'support_branding_ext': 'support_branding_efatto',
-    'l10n_it_simplerp': 'l10n_it_generic',
+    # 'l10n_it_simplerp': 'l10n_it_generic',
     'invoice_fiscal_position_update': 'account_invoice_fiscal_position_update',
     'base_vat_sanitize_unique': 'base_vat_sanitized_unique',
     'service_type': 'product_service_type',
