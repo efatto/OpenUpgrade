@@ -1137,6 +1137,21 @@ def fill_bank_accounts(cr):
     )
 
 
+def update_tax_group(env):
+    openupgrade.logged_query(
+        env.cr, """
+            UPDATE account_tax
+            SET tax_group_id = base_code_id
+            WHERE base_code_id IS NOT NULL"""
+    )
+    openupgrade.logged_query(
+        env.cr, """
+            UPDATE account_tax
+            SET tax_group_id = tax_code_id
+            WHERE tax_code_id IS NOT NULL"""
+    )
+
+
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
     cr = env.cr
@@ -1240,3 +1255,4 @@ def migrate(env, version):
     openupgrade.load_data(
         cr, 'account', 'migrations/9.0.1.1/noupdate_changes.xml',
     )
+    update_tax_group(env)
