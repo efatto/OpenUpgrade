@@ -24,6 +24,13 @@ def set_invoice_policy(env):
         """UPDATE product_template
         SET invoice_policy = 'order'
         WHERE invoice_policy IS NULL""")
+    openupgrade.logged_query(
+        env.cr,
+        """UPDATE product_template
+        SET invoice_policy = 'delivery' where
+        type = 'service' and uom_id in (select id from product_uom
+        where category_id in (select id from product_uom_categ where name
+        ilike '%%Working%%'))""")
 
 
 def set_track_service(cr):
