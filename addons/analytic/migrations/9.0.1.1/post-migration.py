@@ -40,6 +40,25 @@ def create_tags(cr):
         })
 
 
+def create_tags_lines(cr):
+    """Create tags for former journal_id field in project."""
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    cr.execute("""
+        SELECT 'journal_name', aaj.name, array_agg(aal.id)
+        FROM account_analytic_line aal
+        JOIN account_analytic_journal aaj ON aal.journal_id = aaj.id
+        where aal.journal_id is not null group by aal.journal_id, aaj.name
+        """
+    )
+    for prefix, name, ids in cr.fetchall():
+        tag = env['account.analytic.tag'].create({
+            'name': '%s - %s' % (prefix, name)
+        })
+        env['account.analytic.line'].browse(ids).write({
+            'tag_ids': [(4, tag.id)],
+        })
+
+
 def set_analytic_account_visibility(cr):
     """Hide view analytic accounts with previous state considered as closed.
 
@@ -69,4 +88,6 @@ def set_analytic_account_visibility(cr):
 def migrate(cr, version):
     set_partner_id(cr)
     create_tags(cr)
+    if openupgrade.is_module_installed(cr, 'project'):
+        create_tags_lines(cr)
     set_analytic_account_visibility(cr)
