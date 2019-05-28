@@ -109,3 +109,5 @@ class account_analytic_line(models.Model):
 
     company_id = fields.Many2one(related='account_id.company_id', string='Company', store=True, readonly=True)
     currency_id = fields.Many2one(related="company_id.currency_id", string="Currency", readonly=True)
+
+    tag_id = fields.Many2one('account.analytic.tag', string="Tag", copy=True)
