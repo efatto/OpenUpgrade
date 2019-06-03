@@ -198,6 +198,13 @@ class project(osv.osv):
         ),
         'date_start': fields.date('Start Date'),
         'date': fields.date('Expiration Date', select=True, track_visibility='onchange'),
+        'favorite_user_ids': fields.many2many(
+            'res.users', 'project_favorite_user_rel',
+            'project_id', 'user_id', 'Project Members',
+            oldname='members',
+            states={'close': [('readonly', True)],
+                    'cancelled': [
+                        ('readonly', True)]}),
      }
 
     _order = "sequence, name, id"

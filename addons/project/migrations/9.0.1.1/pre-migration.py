@@ -21,6 +21,9 @@ column_renames = {
     'project_task': [
         ('reviewer_id', None),
     ],
+    'project_favorite_user_rel': [
+        ('uid', 'user_id')
+    ],
     # rename table and key
     'project_tags_project_task_rel': [
         ('project_category_id', 'project_tags_id'),
@@ -35,6 +38,7 @@ field_renames = [
 table_renames = [
     ('project_category', 'project_tags'),
     ('project_category_project_task_rel', 'project_tags_project_task_rel'),
+    ('project_user_rel', 'project_favorite_user_rel')
 ]
 
 xmlid_renames = [
