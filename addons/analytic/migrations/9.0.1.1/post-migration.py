@@ -45,15 +45,15 @@ def create_tag_lines(cr):
     env = api.Environment(cr, SUPERUSER_ID, {})
     cr.execute(
         """
-        SELECT 'journal_name', aaj.name, array_agg(aal.id)
+        SELECT aaj.name, array_agg(aal.id)
         FROM account_analytic_line aal
         JOIN account_analytic_journal aaj ON aal.journal_id = aaj.id
         where aal.journal_id is not null group by aal.journal_id, aaj.name
         """
     )
-    for prefix, name, ids in cr.fetchall():
+    for name, ids in cr.fetchall():
         tag = env['account.analytic.tag'].create({
-            'name': '%s - %s' % (prefix, name)
+            'name': '%s' % name
         })
         env['account.analytic.line'].browse(ids).write({
             'tag_id': tag.id,
