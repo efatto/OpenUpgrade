@@ -1417,6 +1417,7 @@ def migrate(env, version):
             atp.amount as amount
         FROM account_tax at
         JOIN account_tax atp ON at.parent_id = atp.id
+        WHERE atp.amount_type = 'percent'
     ) AS subquery
     WHERE query.id = subquery.id
     """)
