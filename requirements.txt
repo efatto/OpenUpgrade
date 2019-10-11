@@ -62,3 +62,20 @@ xlrd==1.0.0
 pandas==0.22.0
 openpyxl==2.6.3
 email_validator==1.0.4
+# for maintainer-tools
+appdirs
+argparse
+autopep8
+click
+configparser
+docutils>=0.15.1,<0.15.1.1
+ERPpeek
+github3.py>=1
+inflection
+jinja2
+PyYAML
+polib
+pygments
+requests
+twine
+wheel
