@@ -73,3 +73,8 @@ polib
 pygments
 twine
 wheel
+#localization
+PyXB==1.2.6
+unicodecsv
+unidecode
+codicefiscale
