@@ -1,6 +1,5 @@
 Babel==2.3.4
 decorator==4.0.10
-docutils==0.12
 ebaysdk==2.1.4
 feedparser==5.2.1
 gevent==1.1.2
@@ -54,3 +53,8 @@ polib
 pygments
 twine
 wheel
+#localization
+PyXB==1.2.6
+unicodecsv
+unidecode
+codicefiscale
