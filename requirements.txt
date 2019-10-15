@@ -55,6 +55,7 @@ odoorpc==0.6.0
 git+https://github.com/OCA/openupgradelib.git@master
 # for maintainer-tools
 appdirs
+argparse
 autopep8
 click
 docutils>=0.15.1,<0.15.1.1
