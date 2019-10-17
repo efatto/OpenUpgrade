@@ -43,6 +43,7 @@ xlwt==1.1.2
 xlrd==1.0.0
 # for maintainer-tools
 appdirs
+argparse
 autopep8
 click
 docutils>=0.15.1,<0.15.1.1
