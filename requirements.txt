@@ -46,6 +46,7 @@ appdirs
 argparse
 autopep8
 click
+configparser
 docutils>=0.15.1,<0.15.1.1
 ERPpeek
 github3.py>=1
