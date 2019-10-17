@@ -82,6 +82,15 @@ class Country(models.Model):
         for vals in vals_list:
             if vals.get('code'):
                 vals['code'] = vals['code'].upper()
+        # check if country_state exists: if true, do not create and return
+        # found state
+        if vals.get('code') and vals.get('country_id'):
+            existing_id = self.search([
+                ('code', '=', vals.get('code')),
+                ('country_id', '=', vals.get('country_id')),
+            ])
+            if existing_id:
+                return existing_id
         return super(Country, self).create(vals_list)
 
     @api.multi
