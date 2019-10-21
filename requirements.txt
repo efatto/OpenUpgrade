@@ -60,3 +60,4 @@ PyXB==1.2.6
 unicodecsv
 unidecode
 codicefiscale
+setuptools-odoo
