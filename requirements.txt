@@ -82,3 +82,4 @@ geojson
 shapely
 googlemaps
 zpl2
+setuptools-odoo
