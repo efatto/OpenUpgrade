@@ -60,4 +60,9 @@ PyXB==1.2.6
 unicodecsv
 unidecode
 codicefiscale
+asn1crypto
+geojson
+shapely
+googlemaps
+zpl2
 setuptools-odoo
