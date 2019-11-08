@@ -86,6 +86,9 @@ def import_crm_meeting(cr):
         '''alter table meeting_category_rel
         drop constraint if exists meeting_category_rel_event_id_type_id_key''')
     cr.execute(
+        '''alter table meeting_category_rel
+        drop constraint if exists meeting_category_rel_event_id_key''')
+    cr.execute(
         '''update meeting_category_rel
         set event_id=calendar_event.id
         from calendar_event where event_id=%s''' % (
