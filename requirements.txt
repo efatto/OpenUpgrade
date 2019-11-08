@@ -40,6 +40,7 @@ wsgiref==0.1.2
 xlwt==0.7.5
 email-validator==1.0.4
 git+https://github.com/OCA/openupgradelib.git@master
+git+https://github.com/aeroo/aeroolib.git@py2.x
 # for maintainer-tools
 appdirs
 autopep8
@@ -65,4 +66,3 @@ googlemaps
 zpl2
 setuptools-odoo
 num2words
-aeroolib
