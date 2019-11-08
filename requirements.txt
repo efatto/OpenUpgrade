@@ -65,3 +65,4 @@ googlemaps
 zpl2
 setuptools-odoo
 num2words
+aeroolib
