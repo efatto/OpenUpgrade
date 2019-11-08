@@ -66,4 +66,4 @@ googlemaps
 zpl2
 setuptools-odoo
 num2words
-cups
+pycups
