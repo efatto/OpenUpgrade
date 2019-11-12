@@ -128,13 +128,13 @@ def initialize_location_inventory(cr):
     openupgrade.logged_query(
         cr,
         """
-        UPDATE stock_inventory_line sil SET product_uom = res.uom_id
+        UPDATE stock_inventory_line sil SET product_uom_id = res.uom_id
         FROM (
             SELECT sil1.id, pt1.uom_id
             FROM stock_inventory_line sil1
             LEFT JOIN product_product pp1 ON sil1.product_id = pp1.id
             LEFT JOIN product_template pt1 ON pt1.id = pp1.product_tmpl_id
-            WHERE pt1.uom_id != sil1.product_uom
+            WHERE pt1.uom_id != sil1.product_uom_id
             ) AS res
         WHERE sil.id = res.id
         """)
