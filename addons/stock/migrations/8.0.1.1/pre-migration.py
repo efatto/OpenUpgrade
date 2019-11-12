@@ -125,7 +125,19 @@ def initialize_location_inventory(cr):
         """)
     cr.execute("ALTER TABLE stock_inventory "
                "ALTER COLUMN location_id SET NOT NULL")
-
+    openupgrade.logged_query(
+        cr,
+        """
+        UPDATE stock_inventory_line sil SET product_uom = res.uom_id
+        FROM (
+            SELECT sil1.id, pt1.uom_id
+            FROM stock_inventory_line sil1
+            LEFT JOIN product_product pp1 ON sil1.product_id = pp1.id
+            LEFT JOIN product_template pt1 ON pt1.id = pp1.product_tmpl_id
+            WHERE pt1.uom_id != sil1.product_uom
+            ) AS res
+        WHERE sil.id = res.id
+        """)
 
 def create_stock_picking_fields(cr):
     """ This function reduce creation time of the stock_picking fields
@@ -176,7 +188,19 @@ def create_stock_move_fields(cr):
     cr.execute("""
         ALTER TABLE "stock_move"
         ADD COLUMN "procure_method" VARCHAR DEFAULT 'make_to_stock'""")
-
+    openupgrade.logged_query(
+        cr,
+        """
+        UPDATE stock_move sm SET product_uom = res.uom_id
+        FROM (
+            SELECT sm1.id, pt1.uom_id
+            FROM stock_move sm1
+            LEFT JOIN product_product pp1 ON sm1.product_id = pp1.id
+            LEFT JOIN product_template pt1 ON pt1.id = pp1.product_tmpl_id
+            WHERE pt1.uom_id != sm1.product_uom
+            ) AS res
+        WHERE sm.id = res.id
+        """)
 
 @openupgrade.migrate()
 def migrate(cr, version):
