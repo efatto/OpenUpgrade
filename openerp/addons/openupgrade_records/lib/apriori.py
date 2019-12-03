@@ -32,6 +32,16 @@ renamed_modules = {
     'hr_timesheet_holidays': 'hr_timesheet_holiday',
     # OCA/web
     'web_popup_large': 'web_dialog_size',
+    # other
+    'account_central_journal': 'l10n_it_central_journal',
+    'invoice_mail_send': 'account_invoice_always_email',
+    'web_polymorphic': 'web_polymorphic_field',
+    'mail_organizer': 'email_organizer',
+    'account_financial_report': 'account_financial_report_webkit',
+    'omnia_ddt': 'l10n_it_ddt',
+    'account_invoice_merge_no_unlink': 'account_invoice_merge',
+    'enlarge_form_sheet': 'web_sheet_full_width',
+    'stock_invoice_picking_incoterm': 'stock_picking_invoicing_incoterm',
 }
 
 renamed_models = {
