@@ -42,6 +42,12 @@ renamed_modules = {
     'account_invoice_merge_no_unlink': 'account_invoice_merge',
     'enlarge_form_sheet': 'web_sheet_full_width',
     'stock_invoice_picking_incoterm': 'stock_picking_invoicing_incoterm',
+    'techplus_l10n_it_invoice_intra_cee': 'l10n_it_invoice_intra_cee', #?
+    'techplus_l10n_it_corrispettivi': 'l10n_it_corrispettivi',
+    'techplus_l10n_it_vat_registries': 'l10n_it_vat_registries',
+    'techplus_l10n_it_withholding_tax': 'l10n_it_withholding_tax',
+    'techplus_l10n_it_ricevute_bancarie': 'l10n_it_ricevute_bancarie',
+    'techplus_l10n_it_partially_deductible_vat': 'l10n_it_partially_deductible_vat',
 }
 
 renamed_models = {
