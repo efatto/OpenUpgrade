@@ -83,3 +83,4 @@ shapely
 googlemaps
 zpl2
 setuptools-odoo
+pysftp
