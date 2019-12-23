@@ -76,3 +76,4 @@ geojson
 shapely
 googlemaps
 zpl2
+pysftp
