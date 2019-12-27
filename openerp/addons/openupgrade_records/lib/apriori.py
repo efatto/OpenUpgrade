@@ -52,6 +52,8 @@ renamed_modules = {
     'techplus_account_voucher_cash_basis': 'account_voucher_cash_basis',
     'techplus_account_financial_report': 'account_financial_report',
 }
-
+merged_modules = {
+    'report_aeroo_ooo': 'report_aeroo',
+}
 renamed_models = {
 }
