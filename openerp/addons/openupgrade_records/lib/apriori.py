@@ -38,6 +38,7 @@ renamed_modules = {
     'web_polymorphic': 'web_polymorphic_field',
     'mail_organizer': 'email_organizer',
     'omnia_ddt': 'l10n_it_ddt',
+    'warehouse': 'stock_analytic',
     'enlarge_form_sheet': 'web_sheet_full_width',
     'stock_invoice_picking_incoterm': 'stock_picking_invoicing_incoterm',
     'techplus_l10n_it_invoice_intra_cee': 'l10n_it_invoice_intra_cee', #?
