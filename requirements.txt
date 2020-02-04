@@ -62,7 +62,7 @@ codicefiscale
 asn1crypto
 geojson
 shapely
-googlemaps
+googlemaps==4.0.0
 zpl2
 setuptools-odoo
 num2words
