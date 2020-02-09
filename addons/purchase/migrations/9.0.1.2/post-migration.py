@@ -131,6 +131,27 @@ def set_po_line_computed_rest(env):
     uom_precision = env['decimal.precision'].precision_get('Product Unit of Measure')
     # Fail if there are UoM mismatches
     # Replace https://github.com/OCA/OpenUpgrade/blob/195b61a948dff1c64279eb68f0544/addons/product/product.py#L120-L122
+
+    env.cr.execute(
+        """
+        UPDATE purchase_order_line
+          SET product_uom = al.uom_id
+          FROM account_invoice_line al WHERE purchase_order_line.id = al.purchase_line_id
+          AND purchase_order_line.id IN (
+             SELECT pol.id
+                FROM purchase_order_line pol
+                    JOIN account_invoice_line ail ON
+                        pol.id = ail.purchase_line_id
+                    JOIN product_product ail_pp ON ail_pp.id = ail.product_id
+                    JOIN product_template ail_pt ON ail_pt.id = ail_pp.product_tmpl_id
+                    JOIN product_uom ail_u on (ail_u.id = ail.uom_id)
+                    JOIN product_uom pol_u on (pol_u.id = pol.product_uom)
+                WHERE
+                    ail_u.category_id != pol_u.category_id
+          )
+        """
+    )
+
     env.cr.execute(
         """
             SELECT
@@ -188,6 +209,42 @@ def set_po_line_computed_rest(env):
                 GROUP BY pol2.id
             ) AS sub
             WHERE pol.id = sub.id
+        """
+    )
+    env.cr.execute(
+        """
+        UPDATE purchase_order_line
+          SET product_uom = sm.product_uom
+          FROM stock_move sm WHERE purchase_order_line.id = sm.purchase_line_id
+          AND purchase_order_line.id IN (
+             SELECT pol.id
+               FROM purchase_order_line pol
+                   JOIN stock_move sm ON pol.id = sm.purchase_line_id
+                   JOIN product_product sm_pp ON sm_pp.id = sm.product_id
+                   JOIN product_template sm_pt ON sm_pt.id = sm_pp.product_tmpl_id
+                   JOIN product_uom sm_u on (sm_u.id = sm.product_uom)
+                   JOIN product_uom pol_u on (pol_u.id = pol.product_uom)
+               WHERE
+                   sm_u.category_id != pol_u.category_id
+          )
+        """
+    )
+    env.cr.execute(
+        """
+        UPDATE stock_move
+          SET product_uom = pl.product_uom
+          FROM purchase_order_line pl WHERE pl.id = stock_move.purchase_line_id
+          AND pl.id IN (
+             SELECT pol.id
+               FROM purchase_order_line pol
+                   JOIN stock_move sm ON pol.id = sm.purchase_line_id
+                   JOIN product_product sm_pp ON sm_pp.id = sm.product_id
+                   JOIN product_template sm_pt ON sm_pt.id = sm_pp.product_tmpl_id
+                   JOIN product_uom sm_u on (sm_u.id = sm.product_uom)
+                   JOIN product_uom pol_u on (pol_u.id = pol.product_uom)
+               WHERE
+                   sm_u.category_id != pol_u.category_id
+          )
         """
     )
     env.cr.execute("""
