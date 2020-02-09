@@ -77,3 +77,4 @@ shapely
 googlemaps
 zpl2
 pysftp
+numpy
