@@ -39,7 +39,10 @@ renamed_modules = {
     # OCA/l10n-brazil
     'l10n_br_account_payment': 'l10n_br_account_payment_order',
     'l10n_br_account_product': 'l10n_br_fiscal',
-    'l10n_br_data_account_product': 'l10n_br_nfe_account'
+    'l10n_br_data_account_product': 'l10n_br_nfe_account',
+    # efatto
+    'l10n_it_ddt_ext': 'l10n_it_ddt_date_start',
+    'invoice_filter_country': 'account_invoice_filter_country',
 }
 
 merged_modules = {
