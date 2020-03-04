@@ -50,7 +50,6 @@ renamed_modules = {
     'techplus_account_vat_period_end_statement': 'account_vat_period_end_statement',
     'techplus_account_fiscal_year_closing': 'account_fiscal_year_closing',
     'techplus_account_due_list': 'account_due_list',
-    'techplus_account_voucher_cash_basis': 'account_voucher_cash_basis',
     'techplus_account_financial_report': 'account_financial_report',
 }
 merged_modules = {
