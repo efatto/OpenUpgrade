@@ -43,8 +43,6 @@ renamed_modules = {
     # efatto
     'l10n_it_ddt_ext': 'l10n_it_ddt_date_start',
     'invoice_filter_country': 'account_invoice_filter_country',
-    # other
-    'l10n_it_intrastat_data': 'l10n_it_intrastat',
 }
 
 merged_modules = {
@@ -110,6 +108,8 @@ merged_modules = {
     'l10n_br_sale_product': 'l10n_br_sale',
     'l10n_br_data_account_service': 'l10n_br_fiscal',
     'l10n_br_zip_correios': 'l10n_br_zip',
+    # other
+    'l10n_it_intrastat_data': 'l10n_it_intrastat',
 }
 
 # only used here for openupgrade_records analysis:
