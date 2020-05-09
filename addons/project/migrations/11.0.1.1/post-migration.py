@@ -224,7 +224,9 @@ def remove_mail_subtypes(env):
 def migrate(env, version):
     set_default_values(env)
     if openupgrade.table_exists(env.cr, 'project_issue'):
-        convert_issues(env)
+        env.cr.execute("""SELECT * FROM project_issue""")
+        if env.cr.dictfetchall():
+            convert_issues(env)
     openupgrade.load_data(
         env.cr, 'project', 'migrations/11.0.1.1/noupdate_changes.xml'
     )
