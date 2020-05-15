@@ -42,7 +42,7 @@ def migrate_project_sale_line(env):
                         AND so.state in ('sale', 'done')
                         AND pt.%s in ('task', 'timesheet')
                         AND pj.create_date > so.create_date
-                        AND pj.analytic_account_id = aaa.id
+                        AND so.analytic_account_id = aaa.id
                         AND so.partner_id = aaa.partner_id
                 ) t
                 WHERE t.rnum = 1
