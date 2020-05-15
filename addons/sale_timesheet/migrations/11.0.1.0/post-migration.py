@@ -33,8 +33,7 @@ def migrate_project_sale_line(env):
                         sale_order_line sol,
                         product_product pd,
                         sale_order so,
-                        product_template pt,
-                        account_analytic_account aaa
+                        product_template pt
                     WHERE sol.product_id = pd.id
                         AND sol.order_id = so.id
                         AND so.analytic_account_id = pj.analytic_account_id
@@ -42,8 +41,6 @@ def migrate_project_sale_line(env):
                         AND so.state in ('sale', 'done')
                         AND pt.%s in ('task', 'timesheet')
                         AND pj.create_date > so.create_date
-                        AND so.analytic_account_id = aaa.id
-                        AND so.partner_id = aaa.partner_id
                 ) t
                 WHERE t.rnum = 1
             ) AS sub
