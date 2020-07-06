@@ -66,5 +66,5 @@ googlemaps==4.0.0
 zpl2
 setuptools-odoo
 num2words
-pycups
+#pycups
 phonenumbers==8.10.2
