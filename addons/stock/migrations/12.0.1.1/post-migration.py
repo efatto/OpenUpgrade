@@ -96,12 +96,12 @@ def merge_stock_location_path_stock_rule(env):
             AsIs(openupgrade.get_legacy_name('loc_path_id')),
         ),
     )
-    for row in rules_to_merge:
-        openupgrade_merge_records.merge_records(
-            env, 'stock.rule',
-            [row[1]],
-            row[0],
-        )
+    # for row in rules_to_merge:
+    #     openupgrade_merge_records.merge_records(
+    #         env, 'stock.rule',
+    #         [row[1]],
+    #         row[0],
+    #     )
     pull_push_rule_ids = tuple(set([r[0] for r in rules_to_merge]))
     if pull_push_rule_ids:
         openupgrade.logged_query(
