@@ -84,4 +84,4 @@ googlemaps
 zpl2
 setuptools-odoo
 pysftp
-numpy
+numpy==1.19.0
