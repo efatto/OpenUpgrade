@@ -85,3 +85,4 @@ zpl2
 setuptools-odoo
 pysftp
 numpy
+pdfkit
