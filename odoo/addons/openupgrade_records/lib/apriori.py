@@ -40,8 +40,8 @@ renamed_modules = {
     # efatto
     'l10n_it_ddt_ext': 'l10n_it_ddt_date_start',
     'invoice_filter_country': 'account_invoice_filter_country',
-    'machine_manager_partner': 'maintenance_equipment_ownership',
-    'account_asset_management': 'assets_management',
+    # 'machine_manager_partner': 'maintenance_equipment_ownership',
+    # 'account_asset_management': 'assets_management',
 }
 
 merged_modules = {
