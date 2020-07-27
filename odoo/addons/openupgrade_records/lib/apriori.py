@@ -43,8 +43,8 @@ renamed_modules = {
     # efatto
     'l10n_it_ddt_ext': 'l10n_it_ddt_date_start',
     'invoice_filter_country': 'account_invoice_filter_country',
-    # 'machine_manager_partner': 'maintenance_equipment_ownership',
     # 'account_asset_management': 'assets_management',
+    'mrp_repair_full_editable': 'repair_editable',
 }
 
 merged_modules = {
@@ -112,6 +112,10 @@ merged_modules = {
     'l10n_br_zip_correios': 'l10n_br_zip',
     # other
     'l10n_it_intrastat_data': 'l10n_it_intrastat',
+    # efatto
+    'machine_manager': 'maintenance_equipment_ownership',
+    'machine_manager_partner': 'maintenance_equipment_ownership',
+    'mrp_repair_machine': 'maintenance_equipment_ownership',
 }
 
 # only used here for openupgrade_records analysis:
@@ -138,7 +142,6 @@ renamed_models = {
     'account.asset.depreciation.line': 'account.asset.line',
     'account.asset.category': 'account.asset.profile',
     # Efatto #todo non serve a niente qui, va gestito nella migrazione del modulo
-    'machinery': 'maintenance.equipment',
     'account.asset.asset': 'asset.asset',
     'account.asset.depreciation.line': 'asset.depreciation.line',
     'account.asset.category': 'asset.category',
