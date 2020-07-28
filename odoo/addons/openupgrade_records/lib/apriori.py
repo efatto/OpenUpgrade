@@ -116,6 +116,7 @@ merged_modules = {
     'machine_manager': 'maintenance_equipment_ownership',
     'machine_manager_partner': 'maintenance_equipment_ownership',
     'mrp_repair_machine': 'maintenance_equipment_ownership',
+    'mrp_repair_discount': 'repair_discount',
 }
 
 # only used here for openupgrade_records analysis:
