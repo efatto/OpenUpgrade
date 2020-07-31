@@ -109,9 +109,6 @@ merged_modules = {
     # other
     'l10n_it_intrastat_data': 'l10n_it_intrastat',
     # efatto
-    'machine_manager': 'maintenance_equipment_ownership',
-    'machine_manager_partner': 'maintenance_equipment_ownership',
-    'mrp_repair_machine': 'maintenance_equipment_ownership',
     'mrp_repair_discount': 'repair_discount',
 }
 
