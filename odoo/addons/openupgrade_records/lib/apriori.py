@@ -45,6 +45,8 @@ renamed_modules = {
     'invoice_filter_country': 'account_invoice_filter_country',
     # 'account_asset_management': 'assets_management',
     'mrp_repair_full_editable': 'repair_editable',
+    'l10n_it_light': 'l10n_it_payment_data',
+    'stock_ddt_data': 'l10n_it_ddt_data',
 }
 
 merged_modules = {
