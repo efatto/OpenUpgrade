@@ -45,6 +45,7 @@ renamed_modules = {
     'invoice_filter_country': 'account_invoice_filter_country',
     # 'account_asset_management': 'assets_management',
     'mrp_repair_full_editable': 'repair_editable',
+    'mrp_repair_machine': 'maintenance_equipment_ownership',
 }
 
 merged_modules = {
