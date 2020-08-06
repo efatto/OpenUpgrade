@@ -44,6 +44,7 @@ renamed_modules = {
     'mrp_repair_full_editable': 'repair_editable',
     'mrp_repair_machine': 'maintenance_equipment_ownership',
     'l10n_it_light_closing_template': 'account_closing_data',
+    'account_history': 'partner_history',
 }
 
 merged_modules = {
