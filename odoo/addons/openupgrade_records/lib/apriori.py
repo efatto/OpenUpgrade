@@ -94,6 +94,8 @@ merged_modules = [
     ('l10n_br_data_account_product', 'l10n_br_account_product'),
     ('l10n_br_data_account_service', 'l10n_br_account_service'),
     ('l10n_it_intrastat_data', 'l10n_it_intrastat'),
+    ('l10n_it_report_intrastat', 'l10n_it_intrastat_statement'),
+    ('l10n_it_report_intrastat_parser', 'l10n_it_intrastat_statement'),
 ]
 
 renamed_models = {
