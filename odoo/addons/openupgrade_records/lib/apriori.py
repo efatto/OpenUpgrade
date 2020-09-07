@@ -93,6 +93,7 @@ merged_modules = [
     ('l10n_br_data_account', 'l10n_br_account'),
     ('l10n_br_data_account_product', 'l10n_br_account_product'),
     ('l10n_br_data_account_service', 'l10n_br_account_service'),
+    ('l10n_it_intrastat_data', 'l10n_it_intrastat'),
 ]
 
 renamed_models = {
