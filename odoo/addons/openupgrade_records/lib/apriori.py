@@ -46,6 +46,7 @@ renamed_modules = {
     'l10n_it_light_closing_template': 'account_closing_data',
     'account_history': 'partner_history',
     'sale_rental_machine': 'sale_rental_equipment',
+    'cq_hydronit_2017': 'product_supplierinfo_for_customer',
 }
 
 merged_modules = {
