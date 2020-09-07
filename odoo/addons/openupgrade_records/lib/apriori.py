@@ -122,6 +122,10 @@ merged_modules = {
     # OCA/bank-statement-import
     'account_bank_statement_import_camt':
     'account_bank_statement_import_camt_oca',
+    # OCA/l10n-italy
+    'l10n_it_intrastat_data': 'l10n_it_intrastat',
+    'l10n_it_report_intrastat': 'l10n_it_intrastat_statement',
+    'l10n_it_report_intrastat_parser': 'l10n_it_intrastat_statement',
 }
 
 renamed_models = {
