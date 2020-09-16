@@ -48,6 +48,8 @@ renamed_modules = {
     ),
     # OCA/web
     'web_advanced_search_x2x': 'web_advanced_search',
+    # efatto
+    'account_asset_management': 'assets_management',
 }
 
 merged_modules = {
@@ -126,6 +128,10 @@ merged_modules = {
     'l10n_it_intrastat_data': 'l10n_it_intrastat',
     'l10n_it_report_intrastat': 'l10n_it_intrastat_statement',
     'l10n_it_report_intrastat_parser': 'l10n_it_intrastat_statement',
+    'account_asset_analytic': 'assets_management',
+    'account_asset': 'assets_management',
+    'account_asset_depr_line_cancel': 'assets_management',
+    'account_asset_disposal': 'assets_management',
 }
 
 renamed_models = {
