@@ -40,12 +40,12 @@ renamed_modules = {
     # efatto
     'l10n_it_ddt_ext': 'l10n_it_ddt_date_start',
     'invoice_filter_country': 'account_invoice_filter_country',
-    # 'account_asset_management': 'assets_management',
     'mrp_repair_full_editable': 'repair_editable',
     'mrp_repair_machine': 'maintenance_equipment_ownership',
     'l10n_it_light_closing_template': 'account_closing_data',
     'account_history': 'partner_history',
     'sale_rental_machine': 'sale_rental_equipment',
+    'mrp_repair_revision': 'repair_revision',
 }
 
 merged_modules = {
@@ -67,7 +67,6 @@ merged_modules = {
     # OCA/account-analytic
     # although model is defined in "analytic", logic is in "account"
     'account_analytic_distribution': 'account',
-    'account_asset_analytic': 'assets_management',
     # OCA/account-financial-reporting
     'customer_activity_statement': 'partner_statement',
     'customer_outstanding_statement': 'partner_statement',
@@ -142,10 +141,6 @@ renamed_models = {
     'account.asset.asset': 'account.asset',
     'account.asset.depreciation.line': 'account.asset.line',
     'account.asset.category': 'account.asset.profile',
-    # Efatto #todo non serve a niente qui, va gestito nella migrazione del modulo
-    'account.asset.asset': 'asset.asset',
-    'account.asset.depreciation.line': 'asset.depreciation.line',
-    'account.asset.category': 'asset.category',
 }
 
 # only used here for openupgrade_records analysis:
