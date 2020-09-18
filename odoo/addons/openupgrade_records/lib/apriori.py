@@ -96,6 +96,9 @@ merged_modules = [
     ('l10n_it_intrastat_data', 'l10n_it_intrastat'),
     ('l10n_it_report_intrastat', 'l10n_it_intrastat_statement'),
     ('l10n_it_report_intrastat_parser', 'l10n_it_intrastat_statement'),
+    # Efatto repair
+    ('machine_manager', 'maintenance'),
+    ('machine_manager_partner', 'maintenance'),
 ]
 
 renamed_models = {
