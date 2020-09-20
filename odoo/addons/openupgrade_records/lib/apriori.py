@@ -140,4 +140,7 @@ renamed_models = {
     'ir.actions.report.xml': 'ir.actions.report',
     'stock.pack.operation': 'stock.move.line',
     'stock.picking.wave': 'stock.picking.batch',
+    'account.asset': 'asset.asset',
+    'account.asset.profile': 'asset.category',
+    'account.asset.line': 'asset.depreciation.line',
 }
