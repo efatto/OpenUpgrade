@@ -127,7 +127,6 @@ merged_modules = {
     'l10n_it_report_intrastat': 'l10n_it_intrastat_statement',
     'l10n_it_report_intrastat_parser': 'l10n_it_intrastat_statement',
     # efatto
-    'account_asset': 'assets_management',
     'account_asset_management': 'assets_management',
     'account_asset_analytic': 'assets_management',
     'account_asset_depr_line_cancel': 'assets_management',
