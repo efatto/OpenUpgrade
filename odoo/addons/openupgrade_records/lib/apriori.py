@@ -49,6 +49,7 @@ renamed_modules = {
     'account_history': 'partner_history',
     'sale_rental_machine': 'sale_rental_equipment',
     'mrp_repair_revision': 'repair_revision',
+    'mrp_repair_distance': 'repair_map_distance',
 }
 
 merged_modules = {
