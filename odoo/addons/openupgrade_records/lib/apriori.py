@@ -48,6 +48,8 @@ renamed_modules = {
     ),
     # OCA/web
     'web_advanced_search_x2x': 'web_advanced_search',
+    # efatto
+    'cq_sales_10': 'sale_order_line_date',
 }
 
 merged_modules = {
