@@ -48,8 +48,6 @@ renamed_modules = {
     ),
     # OCA/web
     'web_advanced_search_x2x': 'web_advanced_search',
-    # efatto
-    'cq_sales_10': 'sale_order_line_date',
 }
 
 merged_modules = {
@@ -133,6 +131,8 @@ merged_modules = {
     'account_asset_analytic': 'assets_management',
     'account_asset_depr_line_cancel': 'assets_management',
     'account_asset_disposal': 'assets_management',
+    # efattoh
+    'cq_sales_10': 'sale_order_line_date',
 }
 
 renamed_models = {
