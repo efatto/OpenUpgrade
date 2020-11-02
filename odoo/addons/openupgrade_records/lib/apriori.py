@@ -47,6 +47,7 @@ renamed_modules = {
     'sale_rental_machine': 'sale_rental_equipment',
     'mrp_repair_revision': 'repair_revision',
     'mrp_repair_distance': 'repair_map_distance',
+    'cq_hycal_10': 'sale_order_calendar_state',
 }
 
 merged_modules = {
