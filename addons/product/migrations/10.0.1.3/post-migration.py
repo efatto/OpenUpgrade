@@ -25,21 +25,24 @@ def create_property_product_pricelist_from_m2o(env):
                 INSERT INTO ir_property
                 (name, res_id, company_id, fields_id, value_reference, type)
                 SELECT
-                    'property_product_pricelist_m2o',
+                    'property_product_pricelist',
                     CONCAT('res.partner,', %s),
                     %s,
                     %s,
-                    CONCAT('product.pricelist,', %s),
+                    CONCAT('product.pricelist,', p.property_product_pricelist_m2o),
                     'many2one'
-                WHERE NOT EXISTS(SELECT 1
+                FROM
+                    res_partner as p
+                WHERE p.id = %s
+                AND NOT EXISTS(SELECT 1
                                   FROM ir_property
                                  WHERE fields_id=%s
                                    AND company_id=%s
                                    AND res_id=CONCAT('res.partner,', %s))
                 """
-            ), (partner.id, partner.company_id, fields_id,
-                partner.property_product_pricelist_m2o,
-                fields_id, partner.company_id, partner.id)
+            ), (partner.id, partner.company_id.id, fields_id,
+                partner.id,
+                fields_id, partner.company_id.id, partner.id)
         )
 
 
