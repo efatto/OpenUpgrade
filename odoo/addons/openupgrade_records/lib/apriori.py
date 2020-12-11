@@ -49,6 +49,8 @@ renamed_modules = {
     'mrp_repair_distance': 'repair_map_distance',
     'cq_hycal_10': 'sale_order_calendar_state',
     'hydronit_customizations': 'purchase_vendor_notes',
+    'contract_show_sale': 'analytic_show_sale',
+    'contract_show_invoice': 'analytic_show_invoice',
 }
 
 merged_modules = {
