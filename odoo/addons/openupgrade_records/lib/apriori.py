@@ -55,6 +55,7 @@ renamed_modules = {
     'hydronit_customizations': 'purchase_vendor_notes',
     'contract_show_sale': 'analytic_show_sale',
     'contract_show_invoice': 'analytic_show_invoice',
+    'stock_inventory_valuation_report': 'stock_inventory_valuation_report_py3o',
 }
 
 merged_modules = {
