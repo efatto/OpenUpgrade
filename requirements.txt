@@ -30,9 +30,9 @@ pyldap==2.4.28; sys_platform != 'win32'
 pyparsing==2.1.10
 PyPDF2==1.26.0
 pyserial==3.1.1
-python-dateutil==2.5.3
+python-dateutil>=2.6.0
 # vatnumber requirement. Last version compatible
-python-stdnum<=1.14
+# python-stdnum<=1.14
 pytz==2016.7
 pyusb==1.0.0
 PyYAML==3.12 ; python_version < '3.7'
@@ -56,26 +56,25 @@ future==0.16.0
 odoorpc==0.6.0
 git+https://github.com/OCA/openupgradelib.git@master
 # for maintainer-tools
-appdirs
-argparse
-autopep8
+appdirs==1.4.4
+argparse==1.4.0
+autopep8==1.5.6
 click
-ERPpeek
 github3.py>=1
-inflection
-polib
-pygments
-twine
+inflection==0.5.1
+polib==1.1.0
+pygments==2.8.1
+twine==3.4.1
 wheel
 #localization
 PyXB==1.2.6
-unicodecsv
-unidecode
-codicefiscale
-asn1crypto
-geojson
-shapely
-googlemaps
-zpl2
-pysftp
-numpy
+unicodecsv==0.14.1
+unidecode==1.2.0
+codicefiscale==0.9
+asn1crypto==1.4.0
+geojson==2.5.0
+shapely==1.7.1
+googlemaps==4.4.5
+zpl2==1.2
+pysftp==0.2.9
+numpy==1.19.5
