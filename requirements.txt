@@ -1,5 +1,6 @@
 Babel==2.3.4
 decorator==4.0.10
+docutils==0.12
 ebaysdk==2.1.5
 feedparser==5.2.1
 gevent==1.1.2 ; sys_platform != 'win32' and python_version < '3.7'
@@ -17,6 +18,7 @@ mock==2.0.0
 num2words==0.5.6
 ofxparse==0.16
 passlib==1.6.5
+phonenumbers
 Pillow==4.0.0 ; python_version < '3.7'
 Pillow==6.1.0 ; python_version >= '3.7'
 psutil==4.3.1; sys_platform != 'win32'
@@ -58,7 +60,6 @@ appdirs
 argparse
 autopep8
 click
-docutils==0.12
 ERPpeek
 github3.py>=1
 inflection
@@ -67,7 +68,7 @@ pygments
 twine
 wheel
 #localization
-PyXB==1.2.5
+PyXB==1.2.6
 unicodecsv
 unidecode
 codicefiscale
