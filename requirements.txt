@@ -58,7 +58,7 @@ appdirs
 argparse
 autopep8
 click
-docutils>=0.15.1,<0.15.1.1
+docutils==0.12
 ERPpeek
 github3.py>=1
 inflection
