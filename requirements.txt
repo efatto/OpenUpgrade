@@ -1,6 +1,6 @@
 Babel==2.3.4
 decorator==4.0.10
-docutils==0.12
+docutils==0.15
 ebaysdk==2.1.5
 feedparser==5.2.1
 gevent==1.1.2 ; sys_platform != 'win32' and python_version < '3.7'
