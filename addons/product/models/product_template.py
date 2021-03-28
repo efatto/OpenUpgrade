@@ -8,9 +8,6 @@ import odoo.addons.decimal_precision as dp
 
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import ValidationError, except_orm
-import logging
-
-_logger = logging.getLogger(__name__)
 
 
 class ProductTemplate(models.Model):
@@ -123,7 +120,7 @@ class ProductTemplate(models.Model):
     barcode = fields.Char('Barcode', oldname='ean13', related='product_variant_ids.barcode')
     default_code = fields.Char(
         'Internal Reference', compute='_compute_default_code',
-        inverse='_set_default_code', store=True)
+        inverse='_set_default_code')#, store=True)
 
     item_ids = fields.One2many('product.pricelist.item', 'product_tmpl_id', 'Pricelist Items')
 
@@ -241,12 +238,10 @@ class ProductTemplate(models.Model):
     @api.depends('product_variant_ids', 'product_variant_ids.default_code')
     def _compute_default_code(self):
         unique_variants = self.filtered(lambda template: len(template.product_variant_ids) == 1)
-        _logger.info('Unique variants found %s' % len(unique_variants))
         for template in unique_variants:
             template.default_code = template.product_variant_ids.default_code
-        multi_variants = self - unique_variants
-        _logger.info('Multi variants found %s' % len(multi_variants))
-        multi_variants.write({'default_code': ''})
+        for template in (self - unique_variants):
+            template.default_code = ''
 
     @api.one
     def _set_default_code(self):
