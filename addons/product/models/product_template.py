@@ -119,8 +119,8 @@ class ProductTemplate(models.Model):
     # related to display product product information if is_product_variant
     barcode = fields.Char('Barcode', oldname='ean13', related='product_variant_ids.barcode')
     default_code = fields.Char(
-        'Internal Reference', compute='_compute_default_code',
-        inverse='_set_default_code')#, store=True)
+        'Internal Reference')#, compute='_compute_default_code',
+        # inverse='_set_default_code')#, store=True)
 
     item_ids = fields.One2many('product.pricelist.item', 'product_tmpl_id', 'Pricelist Items')
 
