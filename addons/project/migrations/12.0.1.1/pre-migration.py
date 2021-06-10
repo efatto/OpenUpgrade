@@ -36,15 +36,24 @@ def fill_project_project_inherits_values(env):
     openupgrade.logged_query(
         env.cr, """ALTER TABLE project_project
             ADD COLUMN name VARCHAR,
-            ADD COLUMN partner_id int4,
-            ADD COLUMN company_id int4""")
+            ADD COLUMN partner_id int4""")
+    openupgrade.logged_query(
+        env.cr, sql.SQL(
+            """UPDATE project_project pp
+            SET name = aaa.name, partner_id = aaa.partner_id
+            FROM account_analytic_account aaa
+            WHERE pp.{} = aaa.id"""
+        ).format(
+            sql.Identifier('analytic_account_id'),
+        )
+    )
     openupgrade.logged_query(
         env.cr, sql.SQL(
             """UPDATE project_project pp
             SET name = aaa.name, partner_id = aaa.partner_id,
                 company_id = aaa.company_id
             FROM account_analytic_account aaa
-            WHERE pp.{} = aaa.id"""
+            WHERE pp.{} = aaa.id AND pp.company_id is null"""
         ).format(
             sql.Identifier('analytic_account_id'),
         )
