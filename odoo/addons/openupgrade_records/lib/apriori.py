@@ -99,6 +99,7 @@ merged_modules = [
     # Efatto repair
     ('machine_manager', 'maintenance'),
     ('machine_manager_partner', 'maintenance'),
+    ('res_partner_company_name', 'base'),
 ]
 
 renamed_models = {
