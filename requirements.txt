@@ -53,7 +53,6 @@ github3.py>=1
 inflection==0.5.1
 polib==1.1.0
 pygments==2.8.1
-twine==3.4.1
 #localization
 PyXB==1.2.6
 unicodecsv==0.14.1
