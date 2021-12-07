@@ -9,11 +9,11 @@ xmlids = [
 ]
 
 column_renames = {
-    'product_template': [
-        ('loc_case', None),
-        ('loc_rack', None),
-        ('loc_row', None)
-    ],
+    # 'product_template': [
+    #     ('loc_case', None),
+    #     ('loc_rack', None),
+    #     ('loc_row', None)
+    # ],
     'stock_pack_operation': [
         ('cost', None),
         ('currency', None),
