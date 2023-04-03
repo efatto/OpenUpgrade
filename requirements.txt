@@ -50,7 +50,6 @@ odoorpc==0.7.0
 git+https://github.com/OCA/openupgradelib.git@master
 bokeh==0.12.7
 psycogreen==1.0
-xlrd==1.0.0
 openpyxl==2.6.3
 email_validator==1.0.4
 # for maintainer-tools
