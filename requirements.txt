@@ -47,4 +47,37 @@ xlrd==1.1.0
 pypiwin32 ; sys_platform == 'win32'
 # Needed for OpenUpgrade
 odoorpc==0.7.0
-openupgradelib
+git+https://github.com/OCA/openupgradelib.git@master
+bokeh==0.12.7
+psycogreen==1.0
+xlrd==1.0.0
+openpyxl==2.6.3
+email_validator==1.0.4
+# for maintainer-tools
+appdirs
+autopep8
+click
+ERPpeek
+github3.py>=1
+inflection
+polib
+pygments
+twine
+wheel
+#localization
+unicodecsv
+unidecode
+codicefiscale
+asn1crypto
+geojson
+shapely
+googlemaps
+zpl2
+setuptools-odoo
+pysftp
+numpy
+pdfkit
+xmlschema
+zxcvbn
+pymssql
+phonenumbers
