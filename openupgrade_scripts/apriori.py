@@ -63,6 +63,7 @@ renamed_modules = {
     # OCA/l10n-italy
     "l10n_it_causali_pagamento": "l10n_it_payment_reason",
     "l10n_it_codici_carica": "l10n_it_appointment_code",
+    "l10n_it_dichiarazione_intento": "l10n_it_declaration_of_intent",
     "l10n_it_withholding_tax_causali": "l10n_it_withholding_tax_reason",
     # OCA/...
 }
