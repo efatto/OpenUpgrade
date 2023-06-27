@@ -83,3 +83,4 @@ xmlschema
 zxcvbn
 pymssql
 phonenumbers
+scipy
