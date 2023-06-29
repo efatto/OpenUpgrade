@@ -44,7 +44,6 @@ Werkzeug==0.11.15 ; sys_platform != 'win32'
 Werkzeug==0.16.0  ; sys_platform == 'win32'
 XlsxWriter==0.9.3
 xlwt==1.3.*
-xlrd==1.0.0
 pypiwin32 ; sys_platform == 'win32'
 # Needed for OpenUpgrade
 odoorpc==0.6.0
@@ -85,3 +84,21 @@ pymssql
 phonenumbers
 scipy
 sqlalchemy
+cryptography==38.0.0
+openpyxl==2.6.3
+py3o.formats
+py3o.template
+setuptools-rust==0.11.6
+setuptools==41.6.0
+setuptools_scm==5.0.2
+toml==0.10.2
+webp==0.1.3
+gprof2dot
+xdot
+zpl
+zebra
+html2image
+cups
+pymysql
+pyOpenSSL==22.1.0
+pyftpdlib==1.5.7
