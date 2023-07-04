@@ -78,7 +78,7 @@ numpy
 pdfkit
 xmlschema
 zxcvbn
-pymssql
+pymssql<=2.2.5
 phonenumbers
 scipy
 sqlalchemy
