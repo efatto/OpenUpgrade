@@ -31,7 +31,7 @@ numpy
 pdfkit
 xmlschema
 zxcvbn
-pymssql
+pymssql<=2.2.5
 phonenumbers
 vatnumber
 PyPDF2==1.26.0
