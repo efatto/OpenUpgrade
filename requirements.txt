@@ -56,3 +56,4 @@ pymysql
 pyOpenSSL==22.1.0
 pyftpdlib==1.5.7
 odoo-test-helper
+astor
