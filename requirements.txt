@@ -80,6 +80,7 @@ numpy
 pdfkit
 xmlschema
 zxcvbn
+cython==0.29.35
 pymssql
 phonenumbers
 scipy
