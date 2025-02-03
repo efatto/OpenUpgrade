@@ -81,7 +81,7 @@ pdfkit
 xmlschema
 zxcvbn
 cython==0.29.35
-pymssql
+pymssql==2.2.5
 phonenumbers
 scipy
 sqlalchemy
