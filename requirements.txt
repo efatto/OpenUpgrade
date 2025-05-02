@@ -3,3 +3,4 @@ openupgradelib
 odoorpc
 PyYAML
 email_validator
+codicefiscale
