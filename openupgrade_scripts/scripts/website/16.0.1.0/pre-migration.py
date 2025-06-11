@@ -145,6 +145,14 @@ def migrate(env, version):
     _fill_language_ids_if_null(env)
     openupgrade.rename_xmlids(env.cr, _xmlids_renames)
     openupgrade.delete_records_safely_by_xml_id(env, _xmlids_delete)
+    openupgrade.logged_query(
+        env.cr,
+        "delete from ir_model_data where name = 'website_configurator'",
+    )
+    openupgrade.logged_query(
+        env.cr,
+        "delete from ir_ui_view where name ilike 'Website Configurator%'",
+    )
     delete_constraint_website_visitor_partner_uniq(env)
     _fill_homepage_url(env)
     _mig_s_progress_steps_contents(env)
