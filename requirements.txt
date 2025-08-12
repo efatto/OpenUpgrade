@@ -15,6 +15,7 @@ inflection
 polib
 pygments
 twine
+urllib3
 wheel
 #localization
 unicodecsv
