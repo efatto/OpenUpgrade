@@ -3,8 +3,9 @@ set -e
 # Configuration
 export PREV=17.0 OLD=18.0 NEW=19.0
 
-git clone https://github.com/OCA/OpenUpgrade --single-branch -b $OLD
+git clone https://github.com/efatto/OpenUpgrade --single-branch -b $OLD
 cd OpenUpgrade
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --tree-filter '[ -f .github/workflows/test.yml ] && mv .github/workflows/test.yml .github/workflows/test-migration.yml || true' 18.0
 git fetch origin $NEW:$NEW
 
 NODOTPREV=${PREV/\./}         # e.g. 16.0 -> 160
