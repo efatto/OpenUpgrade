@@ -73,6 +73,7 @@ def rename_project_milestone_target_date(env):
 
 @openupgrade.migrate()
 def migrate(env, version):
+    openupgrade.lift_constraints(env.cr, "project_task_type", "name")
     openupgrade.rename_columns(env.cr, _column_renames)
     adapt_project_task_dependency(env)
     fill_project_project_allow_task_dependencies(env)
