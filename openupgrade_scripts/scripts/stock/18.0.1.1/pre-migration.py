@@ -126,6 +126,21 @@ def fill_stock_putaway_rule_sublocation(env):
     )
 
 
+def uninstall_module_product_expiry_if_lot_is_disabled(env):
+    lot_group = env.ref("stock.group_production_lot")
+    base_user_group = env.ref("base.group_user")
+    if lot_group not in base_user_group.implied_ids:
+        openupgrade.logged_query(
+            env.cr,
+            """
+            UPDATE ir_module_module
+            SET state = 'to remove'
+            WHERE name = 'product_expiry'
+              AND state NOT IN ('uninstalled', 'to remove')
+            """,
+        )
+
+
 @openupgrade.migrate()
 def migrate(env, version=None):
     if openupgrade.column_exists(env.cr, "product_template", "responsible_id"):
@@ -141,3 +156,4 @@ def migrate(env, version=None):
     fill_product_template_is_storable(env)
     fill_stock_move_location_dest_id(env)
     fill_stock_putaway_rule_sublocation(env)
+    uninstall_module_product_expiry_if_lot_is_disabled(env)
