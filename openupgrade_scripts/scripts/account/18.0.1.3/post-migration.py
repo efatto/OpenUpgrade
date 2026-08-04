@@ -141,6 +141,13 @@ def fill_res_partner_property_x_payment_method_line_id(env):
         )
 
 
+def create_batch_payment_sequence(env):
+    # already created companies don't have a batch payment sequence, so force creation
+    # (this method checks if the sequence exists and creates it if it doesn't)
+    for company in env["res.company"].search([]):
+        company._create_batch_payment_sequence()
+
+
 def account_account_code_fields(env):
     """
     Fill account.account#code_store from company_id and code
@@ -236,6 +243,7 @@ def migrate(env, version):
     )
     convert_company_dependent(env)
     fill_res_partner_property_x_payment_method_line_id(env)
+    create_batch_payment_sequence(env)
     openupgrade.load_data(env, "account", "18.0.1.3/noupdate_changes.xml")
     openupgrade.delete_record_translations(
         env.cr, "account", ["email_template_edi_invoice"]
