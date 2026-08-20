@@ -20,3 +20,11 @@ def fill_mrp_workorder_costs_hour(env):
 def migrate(env, version):
     fill_mrp_workorder_costs_hour(env)
     openupgrade.load_data(env.cr, "mrp", "15.0.2.0/noupdate_changes.xml")
+    if not env["ir.module.module"].search([("name", "=", "mrp_routing")]):
+        openupgrade.logged_query(
+            env.cr,
+            """
+            DELETE FROM ir_model_data
+            WHERE module = 'mrp_routing' AND name = 'sequence_mrp_route'
+            """,
+        )
