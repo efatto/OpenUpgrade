@@ -55,6 +55,15 @@ renamed_modules = {
     # OCA/web
     "web_widget_product_label_section_and_note": "web_widget_product_label_section_and_note_name_visibility",  # noqa: E501
     # OCA/...
+    # stock-close-period
+    "stock_close_period": "stock_period_evaluation",
+    "stock_close_period_direct_cost": "stock_period_evaluation_direct_cost",
+    "stock_close_period_evaluation_method": "stock_period_evaluation_method",
+    "stock_close_period_exclude_category": "stock_period_evaluation_exclude_category",
+    "stock_close_period_import_price": "stock_period_evaluation_import_price",
+    "stock_close_period_mrp": "stock_period_evaluation_mrp",
+    "stock_close_period_mrp_subcontracting": "stock_period_evaluation_mrp_subcontracting",
+    "stock_close_period_report": "stock_period_evaluation_report",
 }
 
 # Merged modules contain a mapping from old module names to other,
