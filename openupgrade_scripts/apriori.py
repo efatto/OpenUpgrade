@@ -55,7 +55,7 @@ renamed_modules = {
     # OCA/web
     "web_widget_product_label_section_and_note": "web_widget_product_label_section_and_note_name_visibility",  # noqa: E501
     # OCA/...
-    # stock-close-period
+    # efatto/stock-close-period
     "stock_close_period": "stock_period_evaluation",
     "stock_close_period_direct_cost": "stock_period_evaluation_direct_cost",
     "stock_close_period_evaluation_method": "stock_period_evaluation_method",
@@ -64,6 +64,10 @@ renamed_modules = {
     "stock_close_period_mrp": "stock_period_evaluation_mrp",
     "stock_close_period_mrp_subcontracting": "stock_period_evaluation_mrp_subcontracting",
     "stock_close_period_report": "stock_period_evaluation_report",
+    # efatto/e-account
+    "l10n_it_fatturapa_out_footer": "l10n_it_edi_extension_footer",
+    # efatto/efatto
+    "delivery_fix_price": "delivery_price_untaxed",
 }
 
 # Merged modules contain a mapping from old module names to other,
