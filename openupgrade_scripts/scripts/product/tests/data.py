@@ -12,4 +12,7 @@ partner = env.ref("base.user_demo").partner_id
 partner.property_product_pricelist = pricelist_main
 partner.with_company(company).property_product_pricelist = pricelist
 
+# Legacy default: "product" was valid before v18.
+env["ir.default"].set("product.template", "type", "product")
+
 env.cr.commit()

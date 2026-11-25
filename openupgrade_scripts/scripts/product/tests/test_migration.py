@@ -1,4 +1,4 @@
-from odoo.tests import TransactionCase
+from odoo.tests import TransactionCase, tagged
 
 from odoo.addons.openupgrade_framework import openupgrade_test
 
@@ -28,3 +28,13 @@ class TestProductMigration(TransactionCase):
         self.assertEqual(
             partner.with_company(company).property_product_pricelist, pricelist
         )
+
+
+@openupgrade_test
+@tagged("post_install", "-at_install")
+class TestProductTypeDefault(TransactionCase):
+    def test_product_type_defaults(self):
+        product = self.env["product.template"].create({"name": "Default type"})
+        self.assertEqual(product.type, "consu")
+        if "is_storable" in product._fields:
+            self.assertTrue(product.is_storable)
